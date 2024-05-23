@@ -1,4 +1,4 @@
-const postPredictHandler = require('../server/handler');
+const {postPredictHandler, getPredictHandler} = require('../server/handler');
  
 const routes = [
   {
@@ -13,6 +13,11 @@ const routes = [
         multipart: true
       }
     }
+  },
+  {
+    path: '/predict/histories',
+    method: 'GET',
+    handler: getPredictHandler
   }
 ]
  
