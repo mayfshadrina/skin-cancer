@@ -9,8 +9,8 @@ async function predictClassification(model, image) {
             .expandDims()
             .toFloat()
             
-        const prediction = model.predict(tensor);
-        const score = await prediction.data();
+        const predictions = model.predict(tensor);
+        const score = await predictions.data();
         const confidenceScore = Math.max(...score) * 100;
 
         const isCancer = confidenceScore > 50;
